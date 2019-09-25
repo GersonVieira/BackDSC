@@ -11,9 +11,29 @@ public class Usuario {
 	@GeneratedValue
 	int id;
 	String nome;
+	String login;
 	String senha;
 	String tipo;
-	
+	String imagem;
+	public String getLogin() {
+		return login;
+		
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
 	public String getNome() {
 		return nome;
 	}

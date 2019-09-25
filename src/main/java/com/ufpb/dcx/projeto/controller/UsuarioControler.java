@@ -1,5 +1,7 @@
 package com.ufpb.dcx.projeto.controller;
 
+import java.util.Collection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -23,6 +25,15 @@ public class UsuarioControler {
 		System.out.println("post em usuario");
 		Usuario usuarioCadastrado=this.usuarioService.salvar(usuario);
 		return new ResponseEntity<Usuario>(usuarioCadastrado , HttpStatus.CREATED);
+		
+	}
+	
+	@RequestMapping(method = RequestMethod.GET, value = "/usuarios", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Collection<Usuario>> BuscarFilmes() {
+		System.out.println("get em usuario");
+		Collection<Usuario> usuariosBuscados = this.usuarioService.pegarTodos();
+		return new ResponseEntity<>(usuariosBuscados, HttpStatus.OK);
+		
 		
 	}
 
